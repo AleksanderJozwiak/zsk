@@ -6,7 +6,7 @@
         header('location: square.php');
       break;
     case 'prostokat':
-        echo 'prostokat';
+        header('location: rectangle.php');
       break;
   }
   }else {
