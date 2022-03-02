@@ -1,0 +1,43 @@
+html {
+
+}
+body {
+  background-color: pink;
+}
+header {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ width: 100%;
+}
+header img {
+  width: 10%;
+}
+.search {
+  width: 70%;
+}
+#searchBar {
+  width: 60%;
+}
+main {
+
+}
+#kat {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 600px;
+  width: 100%;
+  margin: 10px;
+}
+.kategoria {
+  border: 1px black solid;
+  border-radius: 10px;
+  width: 30%;
+  height: 30%;
+  margin: 10px;
+}
+footer {
+
+}
