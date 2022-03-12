@@ -15,8 +15,8 @@
         </form>
       </div>
       <div class="account">
-        <button type="button" name="signIn" href="">Zaloguj</button>
-        <button type="button" name="signUp">Zarejestruj się</button>
+        <a href="login.php"><button>Zaloguj</button></a>
+        <a href="register.php"><button>Zarejestruj się</button></a>
       </div>
     </header>
     <main>
@@ -26,28 +26,28 @@
           1
         </div>
         <div class="kategoria">
-          1
+          2
         </div>
         <div class="kategoria">
-          1
+          3
         </div>
         <div class="kategoria">
-          1
+          4
         </div>
         <div class="kategoria">
-          1
+          5
         </div>
         <div class="kategoria">
-          1
+          6
         </div>
         <div class="kategoria">
-          1
+          7
         </div>
         <div class="kategoria">
-          1
+          8
         </div>
         <div class="kategoria">
-          1
+          9
         </div>
       </div>
     </main>
