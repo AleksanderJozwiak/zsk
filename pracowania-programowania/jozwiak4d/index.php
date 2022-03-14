@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
-    <title>Konkuter👵🏿</title>
+    <title>Sklep komputerowy</title>
   </head>
   <body>
     <header>
@@ -22,33 +22,51 @@
     <main>
       <h1>Kategorie</h1>
       <div id="kat">
-        <div class="kategoria">
-          1
-        </div>
-        <div class="kategoria">
-          2
-        </div>
-        <div class="kategoria">
-          3
-        </div>
-        <div class="kategoria">
-          4
-        </div>
-        <div class="kategoria">
-          5
-        </div>
-        <div class="kategoria">
-          6
-        </div>
-        <div class="kategoria">
-          7
-        </div>
-        <div class="kategoria">
-          8
-        </div>
-        <div class="kategoria">
-          9
-        </div>
+        <a href="productlist.php?id=1" class="kategoria">
+          <div>
+            Karty Graficzne
+          </div>
+        </a>
+        <a href="productlist.php?id=2" class="kategoria">
+          <div>
+            Procesory
+          </div>
+        </a>
+        <a href="productlist.php?id=3" class="kategoria">
+          <div>
+            Płyty główne
+          </div>
+        </a>
+        <a href="productlist.php?id=4" class="kategoria">
+          <div>
+            Pamięci RAM
+          </div>
+        </a>
+        <a href="productlist.php?id=5" class="kategoria">
+          <div>
+            Zasilacze
+          </div>
+        </a>
+        <a href="productlist.php?id=6" class="kategoria">
+          <div>
+            Dyski twarde
+          </div>
+        </a>
+        <a href="productlist.php?id=7" class="kategoria">
+          <div>
+            Obudowy
+          </div>
+        </a>
+        <a href="productlist.php?id=8" class="kategoria">
+          <div>
+            Monitory
+          </div>
+        </a>
+        <a href="productlist.php?id=9" class="kategoria">
+          <div>
+            Akcesoria
+          </div>
+        </a>
       </div>
     </main>
     <footer>
