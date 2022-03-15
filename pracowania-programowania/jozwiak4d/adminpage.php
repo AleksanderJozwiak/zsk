@@ -24,8 +24,8 @@
           <input type="email" name="email" placeholder="Podaj email">
           <input type="password" name="passwd" placeholder="Podaj hasło"><br><br>
           Płeć:
-          <input type="radio" name="sex" value="K">K
-          <input type="radio" name="sex" value="M">M
+          <input type="radio" name="gender" value="K">K
+          <input type="radio" name="gender" value="M">M
           <input type="submit" name="" value="Dodaj">
         </form><br>
         ADD;
@@ -87,8 +87,8 @@
           <input type="email" name="email" placeholder="Podaj email">
           <input type="password" name="passwd" placeholder="Podaj hasło"><br><br>
           Płeć:
-          <input type="radio" name="sex" value="K">K
-          <input type="radio" name="sex" value="M">M
+          <input type="radio" name="gender" value="K">K
+          <input type="radio" name="gender" value="M">M
           <input type="submit" name="" value="Dodaj">
         </form><br>
         ADD;
@@ -119,6 +119,36 @@
             <td>$row[Email]</td>
             <td>$row[Haslo]</td>
             <td>$row[Plec]</td>
+            <td><a href="./scripts/delete.php?id=$row[KlientID]&admin=1&tabela=klient&tabelaID=KlientID">Usuń</a></td>
+          </tr>
+          TABLE;
+        }
+        echo "</table>";
+       ?>
+    </div>
+
+    <h1>Zarządzaj zamówieniami</h1>
+    <button onclick="LoadDiv('zamowienia')">Otwórz</button>
+
+    <div class="manage" id="zamowienia" style="overflow:scroll; height:400px; display: none;">
+      <?php
+        echo "<br><br>";
+        $sql = "SELECT * FROM `zamowienia`;";
+        $result = $connect->query($sql);
+        echo <<< TABLE
+        <table>
+          <th>ID</th>
+          <th>DataZamowienia</th>
+          <th>KlientID</th>
+          <th>PlatnoscID</th>
+        TABLE;
+        while ($row = $result->fetch_assoc()) {
+          echo <<< TABLE
+          <tr>
+            <td>$row[ZamowienieID]</td>
+            <td>$row[DataZamowienia]</td>
+            <td>$row[KlientID]</td>
+            <td>$row[PlatnoscID]</td>
             <td><a href="./scripts/delete.php?id=$row[KlientID]&admin=1&tabela=klient&tabelaID=KlientID">Usuń</a></td>
           </tr>
           TABLE;
