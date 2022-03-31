@@ -11,7 +11,7 @@
     <h1>Zarządzaj pracownikami</h1>
     <button onclick="LoadDiv('pracownik')">Otwórz</button>
 
-    <div class="manage" id="pracownik" style="overflow:scroll; height:400px; display: none;">
+    <div class="manage" id="pracownik" style="overflow:scroll; height:600px; display: none;">
       <?php
         echo <<< ADD
         <h3>Dodaj pracownika</h3>
@@ -67,14 +67,66 @@
     <h1>Zarządzaj produktami</h1>
     <button onclick="LoadDiv('produkt')">Otwórz</button>
 
-    <div class="manage" id="produkt" style="overflow:scroll; height:400px; display: none;">
+    <div class="manage" id="produkt" style="overflow:scroll; height:600px; display: none;">
+      <?php
+        echo <<< ADD
+        <h3>Dodaj produkt</h3>
+        <form action="./scripts/insertproduct.php?admin=1" method="post">
+          <input type="text" name="name" placeholder="Podaj Nazwę"><br><br>
+          <textarea type="text" name="descripton" placeholder="Podaj Opis" cols="40" rows="5"></textarea><br><br>
+          Obraz: <input type="file" id="img" name="img" accept="image/*"><br><br>
+          <input type="number" name="price" step="0.01" min="0" placeholder="Podaj cenę"><br><br>
+          <input type="number" name="amount" min="0" placeholder="Podaj ilość"><br><br>
+          Wybierz kategorię produktu:
+          <select name="kategoriaid">
+       ADD;
+       $sql ="SELECT * FROM `kategoria`";
+       $result=$connect->query($sql);
+       while ($kat = $result->fetch_assoc()) {
+         echo "<option value='$kat[KategoriaID]''>$kat[NazwaKategorii]</option>";
+       }
+       echo <<< ADD
+         </select><br><br>
+         <input type="submit" name="" value="Dodaj">
+        </form><br>
+        ADD;
 
+        $sql = "SELECT * FROM `produkt`;";
+        $result = $connect->query($sql);
+        echo <<< TABLE
+        <table>
+          <th>ProduktID</th>
+          <th>Nazwa</th>
+          <th>Opis</th>
+          <th>Zdjecie</th>
+          <th>CenaJednostkowa</th>
+          <th>StanMagazynu</th>
+          <th>KategoriaID</th>
+          <th>ZamowieniaID</th>
+        TABLE;
+        while ($row = $result->fetch_assoc()) {
+          echo <<< TABLE
+          <tr>
+            <td>$row[ProduktID]</td>
+            <td>$row[Nazwa]</td>
+            <td>$row[Opis]</td>
+            <td>$row[Zdjecie]</td>
+            <td>$row[CenaJednostkowa]</td>
+            <td>$row[StanMagazynu]</td>
+            <td>$row[KategoriaID]</td>
+            <td>$row[ZamowieniaID]</td>
+            <td><a href="./scripts/delete.php?id=$row[ProduktID]&admin=1&tabela=produkt&tabelaID=ProduktID">Usuń</a></td>
+          </tr>
+          TABLE;
+        }
+        echo "</table>";
+       ?>
     </div>
 
     <h1>Zarządzaj klientami</h1>
     <button onclick="LoadDiv('klient')">Otwórz</button>
 
-    <div class="manage" id="klient" style="overflow:scroll; height:400px; display: none;">
+    <div class="manage" id="klient" style="overflow:scroll; height:600px; display: none;">
       <?php
         echo <<< ADD
         <h3>Dodaj Klienta</h3>
@@ -130,7 +182,7 @@
     <h1>Zarządzaj zamówieniami</h1>
     <button onclick="LoadDiv('zamowienia')">Otwórz</button>
 
-    <div class="manage" id="zamowienia" style="overflow:scroll; height:400px; display: none;">
+    <div class="manage" id="zamowienia" style="overflow:scroll; height:600px; display: none;">
       <?php
         echo "<br><br>";
         $sql = "SELECT * FROM `zamowienia`;";
